@@ -52,3 +52,5 @@
 - [] Qual o estado que menos compra
 - [] Qual o estado que mais vende
 - [] Qual o estado que menos vende
+
+### Coleta de dados
