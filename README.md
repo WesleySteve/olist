@@ -15,3 +15,6 @@
 - 9  [] Carga incremental diaria dos dados
 - 10 [] Realizando limpeza e transformações do dia
 - 11 [] Apresentando os resultados
+
+### Problema de negócio
+- O gestor deseja saber algumas informações sobre como está a saúde de sua empresa.
