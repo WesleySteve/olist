@@ -8,7 +8,7 @@
 - 2  [x] Perguntas de negócio
 - 3  [x] Coleta de dados
 - 4  [x] Modelo de dados transacional
-- 5  [] Conhecendo os dados
+- 5  [x] Conhecendo os dados
 - 6  [] Modelagem do data warehouse
 - 7  [] Carga inical no data warehouse
 - 8  [] Realizando limpeza e transformações iniciais
@@ -63,3 +63,4 @@
 ![modelo transacional](docs/modelagem/modelo-transacional.png)
 
 ### Conhecendo os dados
+- Nesta etapa foi realizado uma analise dos dados, para enter como será desenvolvido o modelo dimensional que terá como foco responder as perguntas de negócio, sem que atrapalhe as operações diarias do sistema transacional.
