@@ -58,3 +58,6 @@
 - link: https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
 
 ### Modelo de dados transacional
+- Imagem disponivel no link acima
+
+![modelo transacional](docs/modelagem/modelo-transacional.png)
