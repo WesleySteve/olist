@@ -18,3 +18,5 @@
 
 ### Problema de negócio
 - O gestor deseja saber algumas informações sobre como está a saúde de sua empresa.
+
+### Perguntas de negócio
