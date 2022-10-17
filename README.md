@@ -66,3 +66,6 @@
 - Nesta etapa foi realizado uma analise dos dados, para enter como será desenvolvido o modelo dimensional que terá como foco responder as perguntas de negócio, sem que atrapalhe as operações diarias do sistema transacional.
 
 ### Modelagem do data warehouse
+- Nesta etapa foi desenhado o modelo dimencional que irá atender as **perguntas de negócio**
+
+![modelo dimencional](docs/modelagem/dw.png)
