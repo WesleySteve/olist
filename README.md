@@ -54,3 +54,5 @@
 - [] Qual o estado que menos vende
 
 ### Coleta de dados
+- Nesta etapa foi feito a extração dos dados diponibilizados no Kaggle.
+- link: https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
