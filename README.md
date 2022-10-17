@@ -10,11 +10,12 @@
 - 4  [x] Modelo de dados transacional
 - 5  [x] Conhecendo os dados
 - 6  [x] Modelagem do data warehouse
-- 7  [] Carga inical no data warehouse
-- 8  [] Realizando limpeza e transformações iniciais
-- 9  [] Carga incremental diaria dos dados
-- 10 [] Realizando limpeza e transformações do dia
-- 11 [] Apresentando os resultados
+- 7  [] Carga full dos arquivos.csv para o banco transacional (oltp)
+- 8  [] Carga inical no data warehouse
+- 9  [] Realizando limpeza e transformações iniciais
+- 10  [] Carga incremental diaria dos dados
+- 11 [] Realizando limpeza e transformações do dia
+- 12 [] Apresentando os resultados
 
 ### Problema de negócio
 - O gestor deseja saber algumas informações sobre como está a saúde de sua empresa.
