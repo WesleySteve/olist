@@ -6,7 +6,7 @@
 ## Etapas do projeto
 - 1  [x] Problema do negócio
 - 2  [x] Perguntas de negócio
-- 3  [] Coleta de dados
+- 3  [x] Coleta de dados
 - 4  [] Modelo de dados transacional
 - 5  [] Conhecendo os dados
 - 6  [] Modelagem do data warehouse
