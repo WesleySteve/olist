@@ -9,7 +9,7 @@
 - 3  [x] Coleta de dados
 - 4  [x] Modelo de dados transacional
 - 5  [x] Conhecendo os dados
-- 6  [] Modelagem do data warehouse
+- 6  [x] Modelagem do data warehouse
 - 7  [] Carga inical no data warehouse
 - 8  [] Realizando limpeza e transformações iniciais
 - 9  [] Carga incremental diaria dos dados
