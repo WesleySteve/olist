@@ -61,3 +61,5 @@
 - Imagem disponivel no link acima
 
 ![modelo transacional](docs/modelagem/modelo-transacional.png)
+
+### Conhecendo os dados
