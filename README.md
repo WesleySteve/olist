@@ -10,7 +10,7 @@
 - 4  [x] Modelo de dados transacional
 - 5  [x] Conhecendo os dados
 - 6  [x] Modelagem do data warehouse
-- 7  [] Repesentação do processo de ETL
+- 7  [x] Repesentação do processo de ETL
 - 8  [] Carga full dos arquivos.csv para o banco transacional (oltp)
 - 9  [] Carga inical no data warehouse
 - 10 [] Realizando limpeza e transformações iniciais
