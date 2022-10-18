@@ -10,12 +10,13 @@
 - 4  [x] Modelo de dados transacional
 - 5  [x] Conhecendo os dados
 - 6  [x] Modelagem do data warehouse
-- 7  [] Carga full dos arquivos.csv para o banco transacional (oltp)
-- 8  [] Carga inical no data warehouse
-- 9  [] Realizando limpeza e transformações iniciais
-- 10  [] Carga incremental diaria dos dados
-- 11 [] Realizando limpeza e transformações do dia
-- 12 [] Apresentando os resultados
+- 7  [] Repesentação do processo de ETL
+- 8  [] Carga full dos arquivos.csv para o banco transacional (oltp)
+- 9  [] Carga inical no data warehouse
+- 10 [] Realizando limpeza e transformações iniciais
+- 11 [] Carga incremental diaria dos dados
+- 12 [] Realizando limpeza e transformações do dia
+- 13 [] Apresentando os resultados
 
 ### Problema de negócio
 - O gestor deseja saber algumas informações sobre como está a saúde de sua empresa.
@@ -70,3 +71,5 @@
 - Nesta etapa foi desenhado o modelo dimencional que irá atender as **perguntas de negócio**
 
 ![modelo dimencional](docs/modelagem/dw.png)
+
+### Repesentação do processo de ETL
