@@ -83,3 +83,5 @@
 ## Tecnicas utilizadas
 - No item 5 Conhecendo os dados da **Etapas do projeto**
   - Foi utilzado a biblioteca **pandas** para fazer as analises dos dados.
+- No item 6 Modelagem do data warehouse da **Etapas do projeto**
+  - Foi utilizado o software SQL Power Archtect para o desenvolvimento da modelagem do data warehouse. 
