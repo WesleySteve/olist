@@ -77,3 +77,7 @@
 - Nesta etapa podemos visualizar uma representação do processo de ETL completo que será realizado.
 
 ![processo etl full](docs/processoETL/processoETL-full.png)
+
+
+
+## Tecnicas utilizadas
