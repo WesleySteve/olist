@@ -11,13 +11,14 @@
 - 5  [x] Conhecendo os dados
 - 6  [x] Modelagem do data warehouse
 - 7  [x] Repesentação do processo de ETL
-- 8  [] Carga full dos arquivos.csv para o banco transacional (oltp)
-- 9  [] Carga inical no data warehouse
-- 10 [] Realizando limpeza e transformações iniciais
-- 11 [] Carga incremental diaria dos dados
-- 12 [] Realizando limpeza e transformações do dia
-- 13 [] Apresentando os resultados
-- 14 [] Tecnicas utilizadas
+- 8  [] Configurando docker-compose
+- 9  [] Carga full dos arquivos.csv para o banco transacional (oltp)
+- 10 [] Carga inical no data warehouse
+- 11 [] Realizando limpeza e transformações iniciais
+- 12 [] Carga incremental diaria dos dados
+- 13 [] Realizando limpeza e transformações do dia
+- 14 [] Apresentando os resultados
+- 15 [] Tecnicas utilizadas
 
 ### Problema de negócio
 - O gestor deseja saber algumas informações sobre como está a saúde de sua empresa.
