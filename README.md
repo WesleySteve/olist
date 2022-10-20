@@ -80,7 +80,9 @@
 ![processo etl full](docs/processoETL/processoETL-full.png)
 
 ### Configurando docker-compose
-
+- Nesta etapa foi adicionado um arquivo **docker-compose.yml** com as configurações dos bancos de dados que serão utilizados.
+- O serviço de oltp será responsável por armazenar as tabelas do banco de dados transacional, que serão carregados dos arquivos .csv que foram obtidos já em etapas anterios.
+- O serviço de dw será responsável por armazenar as tabelas do banco de daaos analitico, que serão carregados com a extração dos dados que estão no banco de dados transacional.
 
 ## Tecnicas utilizadas
 - No item 5 Conhecendo os dados da **Etapas do projeto**
