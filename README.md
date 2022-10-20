@@ -79,6 +79,7 @@
 
 ![processo etl full](docs/processoETL/processoETL-full.png)
 
+### Configurando docker-compose
 
 
 ## Tecnicas utilizadas
