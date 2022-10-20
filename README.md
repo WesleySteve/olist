@@ -98,11 +98,11 @@
 
 ##### **Job Start oltp full**
 
-![Job Start oltp full](docs/processoETL/jobOltp.png)
+![Job Start oltp full](docs/processoETL/oltp/jobOltp.png)
 
 ##### **Transform geolocation**
 
-![Transform geolocation oltp full](docs/processoETL/transformGeolocation.png)
+![Transform geolocation oltp full](docs/processoETL/oltp/transformGeolocation.png)
 ## Tecnicas utilizadas
 - No item 5 Conhecendo os dados da **Etapas do projeto**
   - Foi utilzado a biblioteca **pandas** para fazer as analises dos dados.
