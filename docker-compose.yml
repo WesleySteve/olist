@@ -1,0 +1,42 @@
+version: '3.5'
+
+services:
+  oltp:
+    container_name: oltp-postgres
+    image: postgres
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB_OLTP}
+      POSTGRES_USER: ${POSTGRES_USER_OLTP}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD_OLTP}
+      PGDATA: /data/postgres
+    volumes:
+       - oltp:/data/postgres
+    ports:
+      - "5432:5432"
+    networks:
+      - postgres
+    restart: unless-stopped
+
+  dw:
+    container_name: dw-postgres
+    image: postgres
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB_DW}
+      POSTGRES_USER: ${POSTGRES_USER_DW}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD_DW}
+      PGDATA: /data/postgres
+    volumes:
+       - dw:/data/postgres
+    ports:
+      - "5532:5432"
+    networks:
+      - postgres
+    restart: unless-stopped
+  
+networks:
+  postgres:
+    driver: bridge
+
+volumes:
+    oltp:
+    dw:
