@@ -11,7 +11,7 @@
 - 5  [x] Conhecendo os dados
 - 6  [x] Modelagem do data warehouse
 - 7  [x] Repesentação do processo de ETL
-- 8  [] Configurando docker-compose
+- 8  [x] Configurando docker-compose
 - 9  [] Carga full dos arquivos.csv para o banco transacional (oltp)
 - 10 [] Carga inical no data warehouse
 - 11 [] Realizando limpeza e transformações iniciais
