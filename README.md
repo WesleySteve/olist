@@ -86,6 +86,16 @@
 
 
 ### Carga full dos arquivos.csv para o banco transacional (oltp)
+- Nesta etapa será adicionado imagens do processo de ETL realizado utilizando a ferramenta Pentaho (data integration)
+
+#### Explicação do processo
+- Inicia com o job Start oltp full
+  - Ele chama a primeira **Transform**
+    - A Transform realiza o seu processo
+- O **Job** recebe o resultado da **Transform**
+  - O job chama a proxima **Transform**
+    - E segue este processo até que o Job chame todas as Transforms
+
 
 
 ## Tecnicas utilizadas
