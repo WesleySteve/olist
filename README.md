@@ -84,6 +84,10 @@
 - O serviço de oltp será responsável por armazenar as tabelas do banco de dados transacional, que serão carregados dos arquivos .csv que foram obtidos já em etapas anterios.
 - O serviço de dw será responsável por armazenar as tabelas do banco de daaos analitico, que serão carregados com a extração dos dados que estão no banco de dados transacional.
 
+
+### Carga full dos arquivos.csv para o banco transacional (oltp)
+
+
 ## Tecnicas utilizadas
 - No item 5 Conhecendo os dados da **Etapas do projeto**
   - Foi utilzado a biblioteca **pandas** para fazer as analises dos dados.
