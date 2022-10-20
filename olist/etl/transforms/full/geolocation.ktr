@@ -436,6 +436,11 @@
   <notepads>
   </notepads>
   <order>
+    <hop>
+      <from>csv_geolocation</from>
+      <to>sv_geolocation</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <step>
     <name>csv_geolocation</name>
@@ -529,6 +534,54 @@
     </remotesteps>
     <GUI>
       <xloc>80</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>sv_geolocation</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>geolocation_zip_code_prefix</name>
+        <rename/>
+      </field>
+      <field>
+        <name>geolocation_lat</name>
+        <rename/>
+      </field>
+      <field>
+        <name>geolocation_lng</name>
+        <rename/>
+      </field>
+      <field>
+        <name>geolocation_city</name>
+        <rename/>
+      </field>
+      <field>
+        <name>geolocation_state</name>
+        <rename/>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>192</xloc>
       <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
