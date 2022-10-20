@@ -436,6 +436,11 @@
   <notepads>
   </notepads>
   <order>
+    <hop>
+      <from>csv_products</from>
+      <to>Select values</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <step>
     <name>csv_products</name>
@@ -572,8 +577,72 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>80</xloc>
-      <yloc>288</yloc>
+      <xloc>64</xloc>
+      <yloc>224</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Select values</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>product_id</name>
+        <rename/>
+      </field>
+      <field>
+        <name>product_category_name</name>
+        <rename/>
+      </field>
+      <field>
+        <name>product_name_lenght</name>
+        <rename/>
+      </field>
+      <field>
+        <name>product_description_lenght</name>
+        <rename/>
+      </field>
+      <field>
+        <name>product_photos_qty</name>
+        <rename/>
+      </field>
+      <field>
+        <name>product_weight_g</name>
+        <rename/>
+      </field>
+      <field>
+        <name>product_length_cm</name>
+        <rename/>
+      </field>
+      <field>
+        <name>product_height_cm</name>
+        <rename/>
+      </field>
+      <field>
+        <name>product_width_cm</name>
+        <rename/>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>176</xloc>
+      <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
