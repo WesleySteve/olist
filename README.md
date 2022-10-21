@@ -120,6 +120,11 @@
 
 ![Transform payments oltp full](docs/processoETL/oltp/transformOltpPayments.png)
 
+##### **Transform orders**
+
+![Transform orders oltp full](docs/processoETL/oltp/transformOltpOrders.png)
+
+
 
 ## Tecnicas utilizadas
 - No item 5 Conhecendo os dados da **Etapas do projeto**
