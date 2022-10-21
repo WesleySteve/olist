@@ -112,6 +112,10 @@
 
 ![Transform customers oltp full](docs/processoETL/oltp/transformCustomers.png)
 
+##### **Transform products**
+
+![Transform products oltp full](docs/processoETL/oltp/transformProducts.png)
+
 
 ## Tecnicas utilizadas
 - No item 5 Conhecendo os dados da **Etapas do projeto**
