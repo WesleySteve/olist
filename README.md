@@ -106,7 +106,12 @@
 
 ##### **Transform sellers**
 
-![Transform geolocation oltp full](docs/processoETL/oltp/transformSellers.png)
+![Transform sellers oltp full](docs/processoETL/oltp/transformSellers.png)
+
+##### **Transform customers**
+
+![Transform customers oltp full](docs/processoETL/oltp/transformCustomers.png)
+
 
 ## Tecnicas utilizadas
 - No item 5 Conhecendo os dados da **Etapas do projeto**
