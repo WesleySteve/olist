@@ -126,7 +126,7 @@
 
 ##### **Transform order_items**
 
-![Transform order_items oltp full](docs/processoETL/oltp/transformOltpOrderitems.png)
+![Transform order_items oltp full](docs/processoETL/oltp/transformOltpOrderItems.png)
 
 
 ## Tecnicas utilizadas
