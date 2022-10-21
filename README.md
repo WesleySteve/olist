@@ -77,7 +77,7 @@
 ### Repesentação do processo de ETL
 - Nesta etapa podemos visualizar uma representação do processo de ETL completo que será realizado.
 
-![processo etl full](docs/processoETL/processoETL-full.png)
+![processo etl full](docs/processoETL/oltp/processoETL-full.png)
 
 ### Configurando docker-compose
 - Nesta etapa foi adicionado um arquivo **docker-compose.yml** com as configurações dos bancos de dados que serão utilizados.
