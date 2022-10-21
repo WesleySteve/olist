@@ -102,19 +102,19 @@
 
 ##### **Transform geolocation**
 
-![Transform geolocation oltp full](docs/processoETL/oltp/transformGeolocation.png)
+![Transform geolocation oltp full](docs/processoETL/oltp/transformOltpGeolocation.png)
 
 ##### **Transform sellers**
 
-![Transform sellers oltp full](docs/processoETL/oltp/transformSellers.png)
+![Transform sellers oltp full](docs/processoETL/oltp/transformOltpSellers.png)
 
 ##### **Transform customers**
 
-![Transform customers oltp full](docs/processoETL/oltp/transformCustomers.png)
+![Transform customers oltp full](docs/processoETL/oltp/transformOltpCustomers.png)
 
 ##### **Transform products**
 
-![Transform products oltp full](docs/processoETL/oltp/transformProducts.png)
+![Transform products oltp full](docs/processoETL/oltp/transformOltpProducts.png)
 
 ##### **Transform payments**
 
