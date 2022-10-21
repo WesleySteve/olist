@@ -135,4 +135,6 @@
 - No item 6 Modelagem do data warehouse da **Etapas do projeto**
   - Foi utilizado o software SQL Power Archtect para o desenvolvimento da modelagem do data warehouse.
 - No item 7 Repesentação do processo de ETL da **Etapas do projeto**
-  - Foi utilizado o programa **LibreOffice Draw** e **Paint** para o desenvolvimento do desenho arquitetural do processo completo.  
+  - Foi utilizado o programa **LibreOffice Draw** e **Paint** para o desenvolvimento do desenho arquitetural do processo completo.
+  - No items 8 Configurando docker-compose da **Etapa do projeto**
+    - Foi utilizado um arquivo.yml com as definições dos bancos de dados utilizados no processo de armazenamento dos dados.
