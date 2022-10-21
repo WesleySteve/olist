@@ -12,7 +12,7 @@
 - 6  [x] Modelagem do data warehouse
 - 7  [x] Repesentação do processo de ETL
 - 8  [x] Configurando docker-compose
-- 9  [] Carga full dos arquivos.csv para o banco transacional (oltp)
+- 9  [x] Carga full dos arquivos.csv para o banco transacional (oltp)
 - 10 [] Carga inical no data warehouse
 - 11 [] Realizando limpeza e transformações iniciais
 - 12 [] Carga incremental diaria dos dados
@@ -102,11 +102,32 @@
 
 ##### **Transform geolocation**
 
-![Transform geolocation oltp full](docs/processoETL/oltp/transformGeolocation.png)
+![Transform geolocation oltp full](docs/processoETL/oltp/transformOltpGeolocation.png)
 
 ##### **Transform sellers**
 
-![Transform geolocation oltp full](docs/processoETL/oltp/transformSellers.png)
+![Transform sellers oltp full](docs/processoETL/oltp/transformOltpSellers.png)
+
+##### **Transform customers**
+
+![Transform customers oltp full](docs/processoETL/oltp/transformOltpCustomers.png)
+
+##### **Transform products**
+
+![Transform products oltp full](docs/processoETL/oltp/transformOltpProducts.png)
+
+##### **Transform payments**
+
+![Transform payments oltp full](docs/processoETL/oltp/transformOltpPayments.png)
+
+##### **Transform orders**
+
+![Transform orders oltp full](docs/processoETL/oltp/transformOltpOrders.png)
+
+##### **Transform order_items**
+
+![Transform order_items oltp full](docs/processoETL/oltp/transformOltpOrderitems.png)
+
 
 ## Tecnicas utilizadas
 - No item 5 Conhecendo os dados da **Etapas do projeto**
