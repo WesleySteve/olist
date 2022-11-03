@@ -17,6 +17,22 @@ services:
       - postgres
     restart: unless-stopped
 
+  staging:
+    container_name: staging-postgres
+    image: postgres
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB_STAGING}
+      POSTGRES_USER: ${POSTGRES_USER_STAGING}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD_STAGING}
+      PGDATA: /data/postgres
+    volumes:
+       - dw:/data/postgres
+    ports:
+      - "5532:5432"
+    networks:
+      - postgres
+    restart: unless-stopped   
+
   dw:
     container_name: dw-postgres
     image: postgres
@@ -28,7 +44,7 @@ services:
     volumes:
        - dw:/data/postgres
     ports:
-      - "5532:5432"
+      - "5632:5432"
     networks:
       - postgres
     restart: unless-stopped
@@ -39,4 +55,5 @@ networks:
 
 volumes:
     oltp:
+    staging:
     dw:
