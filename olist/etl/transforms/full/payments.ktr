@@ -489,17 +489,17 @@
   <order>
     <hop>
       <from>csv_payments</from>
-      <to>Select values</to>
+      <to>sv_payments</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Select values</from>
+      <from>sv_payments</from>
       <to>to_payments</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>Select values</name>
+    <name>sv_payments</name>
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
@@ -512,18 +512,23 @@
     <fields>
       <field>
         <name>order_id</name>
+        <rename/>
       </field>
       <field>
         <name>payment_sequential</name>
+        <rename/>
       </field>
       <field>
         <name>payment_type</name>
+        <rename/>
       </field>
       <field>
         <name>payment_installments</name>
+        <rename/>
       </field>
       <field>
         <name>payment_value</name>
+        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
