@@ -90,6 +90,9 @@
 
 ![processo etl etapa 3](docs/processoETL/processoETL-etapa3.png)
 
+#### Etapa 4
+
+![processo etl etapa 4](docs/processoETL/processoETL-etapa4.png)
 
 ### Configurando docker-compose
 - Nesta etapa foi adicionado um arquivo **docker-compose.yml** com as configurações dos bancos de dados que serão utilizados.
