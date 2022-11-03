@@ -75,10 +75,9 @@
 
 ![modelo dimencional](docs/modelagem/dw.png)
 
-### Repesentação do processo de ETL
+### Representação do processo de ETL
 - Nesta etapa podemos visualizar uma representação do processo de ETL completo que será realizado.
 
-![processo etl full](docs/processoETL/oltp/processoETL-full.png)
 #### Etapa 1
 
 ![processo etl etapa 1](docs/processoETL/processoETL-etapa1.png)
