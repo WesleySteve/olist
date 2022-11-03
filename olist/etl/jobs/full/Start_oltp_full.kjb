@@ -315,7 +315,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C:/Users/Wesley/projetos/olist/olist/etl/transforms/full/geolocation.ktr</filename>
+      <filename>C:/Users/Wesley/projetos/olist/olist/etl/transforms/full/1-oltp/geolocation.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -366,7 +366,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C:/Users/Wesley/projetos/olist/olist/etl/transforms/full/sellers.ktr</filename>
+      <filename>C:/Users/Wesley/projetos/olist/olist/etl/transforms/full/1-oltp/sellers.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -405,7 +405,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C:/Users/Wesley/projetos/olist/olist/etl/transforms/full/customers.ktr</filename>
+      <filename>C:/Users/Wesley/projetos/olist/olist/etl/transforms/full/1-oltp/customers.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -444,7 +444,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C:/Users/Wesley/projetos/olist/olist/etl/transforms/full/products.ktr</filename>
+      <filename>C:/Users/Wesley/projetos/olist/olist/etl/transforms/full/1-oltp/products.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -483,7 +483,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C:/Users/Wesley/projetos/olist/olist/etl/transforms/full/payments.ktr</filename>
+      <filename>C:/Users/Wesley/projetos/olist/olist/etl/transforms/full/1-oltp/payments.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -522,7 +522,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C:/Users/Wesley/projetos/olist/olist/etl/transforms/full/orders.ktr</filename>
+      <filename>C:/Users/Wesley/projetos/olist/olist/etl/transforms/full/1-oltp/orders.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
@@ -561,7 +561,7 @@
       <attributes/>
       <specification_method>filename</specification_method>
       <trans_object_id/>
-      <filename>C:/Users/Wesley/projetos/olist/olist/etl/transforms/full/order_items.ktr</filename>
+      <filename>C:/Users/Wesley/projetos/olist/olist/etl/transforms/full/1-oltp/order_items.ktr</filename>
       <transname/>
       <arg_from_previous>N</arg_from_previous>
       <params_from_previous>N</params_from_previous>
