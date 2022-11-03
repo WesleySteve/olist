@@ -13,10 +13,11 @@
 - 7  [x] Repesentação do processo de ETL
 - 8  [x] Configurando docker-compose
 - 9  [x] Carga full dos arquivos.csv para o banco transacional (oltp)
-- 10 [] Carga inical no data warehouse
-- 11 [] Realizando limpeza e transformações iniciais
-- 12 [] Carga incremental diaria dos dados
-- 13 [] Realizando limpeza e transformações do dia
+- 10 [] Carga inicial na staging area
+- 11 [] Realizando limpeza e transformações iniciais e 
+        carga inical no data warehouse
+- 12 [] Carga incremental diaria dos dados na staging area
+- 13 [] Realizando limpeza e transformações diarias e carga no data warehouse
 - 14 [] Apresentando os resultados
 - 15 [] Tecnicas utilizadas
 
