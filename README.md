@@ -13,10 +13,11 @@
 - 7  [x] Repesentação do processo de ETL
 - 8  [x] Configurando docker-compose
 - 9  [x] Carga full dos arquivos.csv para o banco transacional (oltp)
-- 10 [] Carga inical no data warehouse
-- 11 [] Realizando limpeza e transformações iniciais
-- 12 [] Carga incremental diaria dos dados
-- 13 [] Realizando limpeza e transformações do dia
+- 10 [] Carga inicial na staging area
+- 11 [] Realizando limpeza e transformações iniciais e 
+        carga inical no data warehouse
+- 12 [] Carga incremental diaria dos dados na staging area
+- 13 [] Realizando limpeza e transformações diarias e carga no data warehouse
 - 14 [] Apresentando os resultados
 - 15 [] Tecnicas utilizadas
 
@@ -77,7 +78,25 @@
 ### Repesentação do processo de ETL
 - Nesta etapa podemos visualizar uma representação do processo de ETL completo que será realizado.
 
+<<<<<<< HEAD
 ![processo etl full](docs/processoETL/oltp/processoETL-full.png)
+=======
+#### Etapa 1
+
+![processo etl etapa 1](docs/processoETL/processoETL-etapa1.png)
+
+#### Etapa 2
+
+![processo etl etapa 2](docs/processoETL/processoETL-etapa2.png)
+
+#### Etapa 3
+
+![processo etl etapa 3](docs/processoETL/processoETL-etapa3.png)
+
+#### Etapa 4
+
+![processo etl etapa 4](docs/processoETL/processoETL-etapa4.png)
+>>>>>>> dev
 
 ### Configurando docker-compose
 - Nesta etapa foi adicionado um arquivo **docker-compose.yml** com as configurações dos bancos de dados que serão utilizados.
