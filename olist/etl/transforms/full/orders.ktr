@@ -489,17 +489,17 @@
   <order>
     <hop>
       <from>csv_orders</from>
-      <to>Select values</to>
+      <to>sv_orders</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Select values</from>
-      <to>Table output</to>
+      <from>sv_orders</from>
+      <to>to_orders</to>
       <enabled>Y</enabled>
     </hop>
   </order>
   <step>
-    <name>Select values</name>
+    <name>sv_orders</name>
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
@@ -638,13 +638,13 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>224</xloc>
-      <yloc>240</yloc>
+      <xloc>240</xloc>
+      <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Table output</name>
+    <name>to_orders</name>
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -682,8 +682,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>336</xloc>
-      <yloc>240</yloc>
+      <xloc>352</xloc>
+      <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -811,8 +811,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>96</xloc>
-      <yloc>240</yloc>
+      <xloc>112</xloc>
+      <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
   </step>

@@ -590,7 +590,7 @@
     </remotesteps>
     <GUI>
       <xloc>80</xloc>
-      <yloc>256</yloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -607,7 +607,7 @@
     </partitioning>
     <fields>
       <field>
-        <name>geolocation_zip_code_prefix</name>
+        <name>geolocation_city</name>
         <rename/>
       </field>
       <field>
@@ -619,11 +619,11 @@
         <rename/>
       </field>
       <field>
-        <name>geolocation_city</name>
+        <name>geolocation_state</name>
         <rename/>
       </field>
       <field>
-        <name>geolocation_state</name>
+        <name>geolocation_zip_code_prefix</name>
         <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
@@ -638,7 +638,7 @@
     </remotesteps>
     <GUI>
       <xloc>192</xloc>
-      <yloc>256</yloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -682,7 +682,7 @@
     </remotesteps>
     <GUI>
       <xloc>320</xloc>
-      <yloc>256</yloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
