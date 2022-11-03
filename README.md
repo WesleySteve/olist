@@ -86,6 +86,11 @@
 
 ![processo etl etapa 2](docs/processoETL/processoETL-etapa2.png)
 
+#### Etapa 3
+
+![processo etl etapa 3](docs/processoETL/processoETL-etapa3.png)
+
+
 ### Configurando docker-compose
 - Nesta etapa foi adicionado um arquivo **docker-compose.yml** com as configurações dos bancos de dados que serão utilizados.
 - O serviço de oltp será responsável por armazenar as tabelas do banco de dados transacional, que serão carregados dos arquivos .csv que foram obtidos já em etapas anterios.
