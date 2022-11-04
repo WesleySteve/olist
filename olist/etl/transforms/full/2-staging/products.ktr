@@ -487,6 +487,11 @@
     </attributes>
   </connection>
   <order>
+    <hop>
+      <from>ti_products</from>
+      <to>sv_products</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <step>
     <name>ti_products</name>
@@ -737,6 +742,70 @@ FROM "public".producs
     </remotesteps>
     <GUI>
       <xloc>112</xloc>
+      <yloc>176</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>sv_products</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>product_id</name>
+        <rename/>
+      </field>
+      <field>
+        <name>product_category_name</name>
+        <rename/>
+      </field>
+      <field>
+        <name>product_name_lenght</name>
+        <rename/>
+      </field>
+      <field>
+        <name>product_description_lenght</name>
+        <rename/>
+      </field>
+      <field>
+        <name>product_photos_qty</name>
+        <rename/>
+      </field>
+      <field>
+        <name>product_weight_g</name>
+        <rename/>
+      </field>
+      <field>
+        <name>product_length_cm</name>
+        <rename/>
+      </field>
+      <field>
+        <name>product_height_cm</name>
+        <rename/>
+      </field>
+      <field>
+        <name>product_width_cm</name>
+        <rename/>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>240</xloc>
       <yloc>176</yloc>
       <draw>Y</draw>
     </GUI>
