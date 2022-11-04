@@ -13,8 +13,8 @@
 - 7  [x] Repesentação do processo de ETL
 - 8  [x] Configurando docker-compose
 - 9  [x] Carga full dos arquivos.csv para o banco transacional (oltp)
-- 10 [] Carga inicial na staging area
-- 11 [] Realizando limpeza e transformações iniciais da staging carregando 
+- 10 [] Carga full na staging area
+- 11 [] Realizando limpeza e transformações da staging carregando 
         no data warehouse
 - 12 [] Carga incremental diaria dos dados na staging area
 - 13 [] Realizando limpeza e transformações diarias e carregando no data warehouse
