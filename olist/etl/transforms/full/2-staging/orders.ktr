@@ -487,6 +487,11 @@
     </attributes>
   </connection>
   <order>
+    <hop>
+      <from>ti_orders</from>
+      <to>sv_orders</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <step>
     <name>ti_orders</name>
@@ -713,6 +718,66 @@ FROM "public".orders
     </remotesteps>
     <GUI>
       <xloc>144</xloc>
+      <yloc>192</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>sv_orders</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>order_id</name>
+        <rename/>
+      </field>
+      <field>
+        <name>customer_id</name>
+        <rename/>
+      </field>
+      <field>
+        <name>order_status</name>
+        <rename/>
+      </field>
+      <field>
+        <name>order_purchase_timestamp</name>
+        <rename/>
+      </field>
+      <field>
+        <name>order_approved_at</name>
+        <rename/>
+      </field>
+      <field>
+        <name>order_delivered_carrier_date</name>
+        <rename/>
+      </field>
+      <field>
+        <name>order_delivered_customer_date</name>
+        <rename/>
+      </field>
+      <field>
+        <name>order_estimated_delivery_date</name>
+        <rename/>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>272</xloc>
       <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
