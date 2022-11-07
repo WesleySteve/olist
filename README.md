@@ -10,7 +10,7 @@
 - 4  [x] Modelo de dados transacional
 - 5  [x] Conhecendo os dados
 - 6  [x] Modelagem do data warehouse
-- 7  [x] Repesentação do processo de ETL
+- 7  [x] Representação do processo de ETL
 - 8  [x] Configurando docker-compose
 - 9  [x] Carga full dos arquivos.csv para o banco transacional (oltp)
 - 10 [x] Carga full na staging area
