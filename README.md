@@ -10,7 +10,11 @@
 - 4  [x] Modelo de dados transacional
 - 5  [x] Conhecendo os dados
 - 6  [x] Modelagem do data warehouse
-- 7  [x] Repesentação do processo de ETL
+- 7  [x] Representação do processo de ETL
+- -   7.1 [x] Etapa 1 Carga dos arquivos .csv no banco de dados OLTP
+-     7.2 [x] Etapa 2 Carga dos dados do OLTP para STAGING
+-     7.3 [x] Etapa 3 Limpeza e transformações carregando no Data Warehouse
+-     7.4 [x] Etapa 4 Apresentação dos Resultados
 - 8  [x] Configurando docker-compose
 - 9  [x] Carga full dos arquivos.csv para o banco transacional (oltp)
 - 10 [x] Carga full na staging area
@@ -78,19 +82,19 @@
 ### Representação do processo de ETL
 - Nesta etapa podemos visualizar uma representação do processo de ETL completo que será realizado.
 
-#### Etapa 1
+#### Etapa 1 Carga dos arquivos .csv no banco de dados OLTP
 
 ![processo etl etapa 1](docs/processoETL/processoETL-etapa1.png)
 
-#### Etapa 2
+#### Etapa 2 Carga dos dados do OLTP para STAGING
 
 ![processo etl etapa 2](docs/processoETL/processoETL-etapa2.png)
 
-#### Etapa 3
+#### Etapa 3 Limpeza e transformações carregando no Data Warehouse
 
 ![processo etl etapa 3](docs/processoETL/processoETL-etapa3.png)
 
-#### Etapa 4
+#### Etapa 4 Apresentação dos Resultados
 
 ![processo etl etapa 4](docs/processoETL/processoETL-etapa4.png)
 
