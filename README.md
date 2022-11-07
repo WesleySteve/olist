@@ -156,3 +156,5 @@
     - Foi utilizado um arquivo.yml com as definições dos bancos de dados utilizados no processo de armazenamento dos dados.
   - No item 9 Carga full dos arquivos.csv para o banco transacional (oltp)
     - Foi utilizado a ferramenta **Pentaho (data integration)** para fazer as manipulações necessarias para gerar o banco de dados transacional.
+- No item 10 Carga full na staging area
+    - Foi utilizado a ferramenta **Pentaho (data integration)** para fazer as manipulações necessarias para gerar o banco de dados staging.
