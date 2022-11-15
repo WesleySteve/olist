@@ -507,6 +507,11 @@
       <to>mj_customers_geolocation</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>mj_customers_geolocation</from>
+      <to>sv_customers_geolocation</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <step>
     <name>ti_customers</name>
@@ -937,6 +942,62 @@ FROM "public".geolocation
     <GUI>
       <xloc>368</xloc>
       <yloc>224</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>sv_customers_geolocation</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>customer_id</name>
+        <rename>nk_customer_id</rename>
+      </field>
+      <field>
+        <name>customer_unique_id</name>
+        <rename/>
+      </field>
+      <field>
+        <name>customer_zip_code_prefix</name>
+        <rename/>
+      </field>
+      <field>
+        <name>customer_city</name>
+        <rename/>
+      </field>
+      <field>
+        <name>customer_state</name>
+        <rename/>
+      </field>
+      <field>
+        <name>geolocation_lat</name>
+        <rename/>
+      </field>
+      <field>
+        <name>geolocation_lng</name>
+        <rename/>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>480</xloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
