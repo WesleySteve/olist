@@ -487,6 +487,11 @@
     </attributes>
   </connection>
   <order>
+    <hop>
+      <from>ti_tempo</from>
+      <to>sv_tempo</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <step>
     <name>ti_tempo</name>
@@ -569,6 +574,42 @@ FROM "public".orders
     </remotesteps>
     <GUI>
       <xloc>96</xloc>
+      <yloc>192</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>sv_tempo</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>order_status</name>
+        <rename/>
+      </field>
+      <field>
+        <name>order_approved_at</name>
+        <rename/>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>208</xloc>
       <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
