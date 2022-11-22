@@ -436,6 +436,57 @@
   <notepads>
   </notepads>
   <connection>
+    <name>olist_dw</name>
+    <server>localhost</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>dwolist</database>
+    <port>5632</port>
+    <username>dw</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb79ce74c9c3fd89</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>5632</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
+    </attributes>
+  </connection>
+  <connection>
     <name>olist_staging</name>
     <server>localhost</server>
     <type>POSTGRESQL</type>
@@ -512,41 +563,12 @@
       <to>sv_sellers_geolocation</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>sv_sellers_geolocation</from>
+      <to>clu_sellers</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
-  <step>
-    <name>mj_sellers_geolocation</name>
-    <type>MergeJoin</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <join_type>INNER</join_type>
-    <step1>sr_sellers</step1>
-    <step2>sr_geolocation</step2>
-    <keys_1>
-      <key>seller_zip_code_prefix</key>
-    </keys_1>
-    <keys_2>
-      <key>geolocation_zip_code_prefix</key>
-    </keys_2>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>288</xloc>
-      <yloc>208</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
   <step>
     <name>sr_geolocation</name>
     <type>SortRows</type>
@@ -637,7 +659,7 @@
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
-    <copies>1</copies>
+    <copies>5</copies>
     <partitioning>
       <method>none</method>
       <schema_name/>
@@ -649,23 +671,18 @@
       </field>
       <field>
         <name>seller_zip_code_prefix</name>
-        <rename/>
       </field>
       <field>
         <name>seller_city</name>
-        <rename/>
       </field>
       <field>
         <name>seller_state</name>
-        <rename/>
       </field>
       <field>
         <name>geolocation_lat</name>
-        <rename/>
       </field>
       <field>
         <name>geolocation_lng</name>
-        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -678,8 +695,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>416</xloc>
-      <yloc>176</yloc>
+      <xloc>464</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -970,6 +987,107 @@ FROM "public".sellers
     <GUI>
       <xloc>48</xloc>
       <yloc>112</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>clu_sellers</name>
+    <type>CombinationLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>10</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <schema>public</schema>
+    <table>dim_sellers</table>
+    <connection>olist_dw</connection>
+    <commit>100</commit>
+    <cache_size>9999</cache_size>
+    <replace>N</replace>
+    <preloadCache>N</preloadCache>
+    <crc>N</crc>
+    <crcfield>hashcode</crcfield>
+    <fields>
+      <key>
+        <name>nk_seller_id</name>
+        <lookup>nk_seller_id</lookup>
+      </key>
+      <key>
+        <name>seller_zip_code_prefix</name>
+        <lookup>seller_zip_code_prefix</lookup>
+      </key>
+      <key>
+        <name>seller_city</name>
+        <lookup>seller_city</lookup>
+      </key>
+      <key>
+        <name>seller_state</name>
+        <lookup>seller_state</lookup>
+      </key>
+      <key>
+        <name>geolocation_lat</name>
+        <lookup>geolocation_lat</lookup>
+      </key>
+      <key>
+        <name>geolocation_lng</name>
+        <lookup>geolocation_lng</lookup>
+      </key>
+      <return>
+        <name>sk_seller_id</name>
+        <creation_method>autoinc</creation_method>
+        <use_autoinc>Y</use_autoinc>
+      </return>
+    </fields>
+    <sequence/>
+    <last_update_field>dt_load</last_update_field>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>608</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>mj_sellers_geolocation</name>
+    <type>MergeJoin</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>5</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <join_type>INNER</join_type>
+    <step1>sr_sellers</step1>
+    <step2>sr_geolocation</step2>
+    <keys_1>
+      <key>seller_zip_code_prefix</key>
+    </keys_1>
+    <keys_2>
+      <key>geolocation_zip_code_prefix</key>
+    </keys_2>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>320</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
