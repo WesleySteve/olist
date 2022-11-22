@@ -23,9 +23,9 @@
 - 9  [x] Carga full dos arquivos.csv para o banco transacional (oltp)
 - 10 [x] Carga full na staging area
 - 11 [] Realizando limpeza e transformações da staging carregando 
-        no data warehouse
-- 12 [] Carga incremental diaria dos dados na staging area
-- 13 [] Realizando limpeza e transformações diarias e carregando no data warehouse
+        no data warehouse as dimensões
+- 12 [] Carga incremental por perido da tabela fato_orders no data warehouse
+- 13 [] Realizando limpeza e transformações por perido da tabela e carregando no data warehouse
 - 14 [] Apresentando os resultados
 - 15 [] Tecnicas utilizadas
 
