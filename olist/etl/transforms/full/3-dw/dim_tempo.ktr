@@ -436,6 +436,57 @@
   <notepads>
   </notepads>
   <connection>
+    <name>olist_dw</name>
+    <server>localhost</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>dwolist</database>
+    <port>5632</port>
+    <username>dw</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb79ce74c9c3fd89</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>5632</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
+    </attributes>
+  </connection>
+  <connection>
     <name>olist_staging</name>
     <server>localhost</server>
     <type>POSTGRESQL</type>
@@ -507,14 +558,90 @@
       <to>sv_tempo_final</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>sv_tempo_final</from>
+      <to>clu_tempo</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
+  <step>
+    <name>Calculator</name>
+    <type>Calculator</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>5</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <failIfNoFile>Y</failIfNoFile>
+    <calculation>
+      <field_name>ano</field_name>
+      <calc_type>YEAR_OF_DATE</calc_type>
+      <field_a>order_approved_at</field_a>
+      <field_b/>
+      <field_c/>
+      <value_type>None</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <calculation>
+      <field_name>mes</field_name>
+      <calc_type>MONTH_OF_DATE</calc_type>
+      <field_a>order_approved_at</field_a>
+      <field_b/>
+      <field_c/>
+      <value_type>None</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <calculation>
+      <field_name>dia</field_name>
+      <calc_type>DAY_OF_MONTH</calc_type>
+      <field_a>order_approved_at</field_a>
+      <field_b/>
+      <field_c/>
+      <value_type>None</value_type>
+      <value_length>-1</value_length>
+      <value_precision>-1</value_precision>
+      <remove>N</remove>
+      <conversion_mask/>
+      <decimal_symbol/>
+      <grouping_symbol/>
+      <currency_symbol/>
+    </calculation>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>336</xloc>
+      <yloc>272</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
   <step>
     <name>fr_tempo</name>
     <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
-    <copies>1</copies>
+    <copies>5</copies>
     <partitioning>
       <method>none</method>
       <schema_name/>
@@ -538,8 +665,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>208</xloc>
-      <yloc>192</yloc>
+      <xloc>96</xloc>
+      <yloc>272</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -549,7 +676,7 @@
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
-    <copies>1</copies>
+    <copies>5</copies>
     <partitioning>
       <method>none</method>
       <schema_name/>
@@ -557,7 +684,6 @@
     <fields>
       <field>
         <name>order_approved_at</name>
-        <rename/>
       </field>
       <select_unspecified>N</select_unspecified>
     </fields>
@@ -570,8 +696,120 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>320</xloc>
-      <yloc>192</yloc>
+      <xloc>208</xloc>
+      <yloc>272</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>sv_tempo_final</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>5</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>order_approved_at</name>
+        <rename/>
+      </field>
+      <field>
+        <name>ano</name>
+        <rename/>
+      </field>
+      <field>
+        <name>mes</name>
+        <rename/>
+      </field>
+      <field>
+        <name>dia</name>
+        <rename/>
+      </field>
+      <select_unspecified>N</select_unspecified>
+      <meta>
+        <name>order_approved_at</name>
+        <rename>order_approved_at</rename>
+        <type>Date</type>
+        <length>6</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+      <meta>
+        <name>ano</name>
+        <rename>ano</rename>
+        <type>Integer</type>
+        <length>-2</length>
+        <precision>0</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+      <meta>
+        <name>mes</name>
+        <rename>mes</rename>
+        <type>Integer</type>
+        <length>-2</length>
+        <precision>0</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+      <meta>
+        <name>dia</name>
+        <rename>dia</rename>
+        <type>Integer</type>
+        <length>-2</length>
+        <precision>0</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>448</xloc>
+      <yloc>272</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -656,111 +894,55 @@ FROM "public".orders
     </remotesteps>
     <GUI>
       <xloc>96</xloc>
-      <yloc>192</yloc>
+      <yloc>144</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Calculator</name>
-    <type>Calculator</type>
+    <name>clu_tempo</name>
+    <type>CombinationLookup</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
-    <copies>1</copies>
+    <copies>15</copies>
     <partitioning>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <failIfNoFile>Y</failIfNoFile>
-    <calculation>
-      <field_name>ano</field_name>
-      <calc_type>YEAR_OF_DATE</calc_type>
-      <field_a>order_approved_at</field_a>
-      <field_b/>
-      <field_c/>
-      <value_type>None</value_type>
-      <value_length>-1</value_length>
-      <value_precision>-1</value_precision>
-      <remove>N</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
-    </calculation>
-    <calculation>
-      <field_name>mes</field_name>
-      <calc_type>MONTH_OF_DATE</calc_type>
-      <field_a>order_approved_at</field_a>
-      <field_b/>
-      <field_c/>
-      <value_type>None</value_type>
-      <value_length>-1</value_length>
-      <value_precision>-1</value_precision>
-      <remove>N</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
-    </calculation>
-    <calculation>
-      <field_name>dia</field_name>
-      <calc_type>DAY_OF_MONTH</calc_type>
-      <field_a>order_approved_at</field_a>
-      <field_b/>
-      <field_c/>
-      <value_type>None</value_type>
-      <value_length>-1</value_length>
-      <value_precision>-1</value_precision>
-      <remove>N</remove>
-      <conversion_mask/>
-      <decimal_symbol/>
-      <grouping_symbol/>
-      <currency_symbol/>
-    </calculation>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>416</xloc>
-      <yloc>192</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>sv_tempo_final</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
+    <schema>public</schema>
+    <table>dim_tempo</table>
+    <connection>olist_dw</connection>
+    <commit>100</commit>
+    <cache_size>9999</cache_size>
+    <replace>N</replace>
+    <preloadCache>N</preloadCache>
+    <crc>N</crc>
+    <crcfield>hashcode</crcfield>
     <fields>
-      <field>
+      <key>
         <name>order_approved_at</name>
-        <rename/>
-      </field>
-      <field>
+        <lookup>order_approved_at</lookup>
+      </key>
+      <key>
         <name>ano</name>
-        <rename/>
-      </field>
-      <field>
+        <lookup>ano</lookup>
+      </key>
+      <key>
         <name>mes</name>
-        <rename/>
-      </field>
-      <field>
+        <lookup>mes</lookup>
+      </key>
+      <key>
         <name>dia</name>
-        <rename/>
-      </field>
-      <select_unspecified>N</select_unspecified>
+        <lookup>dia</lookup>
+      </key>
+      <return>
+        <name>sk_tempo_id</name>
+        <creation_method>autoinc</creation_method>
+        <use_autoinc>Y</use_autoinc>
+      </return>
     </fields>
+    <sequence/>
+    <last_update_field>dt_load</last_update_field>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -770,8 +952,8 @@ FROM "public".orders
       </output>
     </remotesteps>
     <GUI>
-      <xloc>528</xloc>
-      <yloc>192</yloc>
+      <xloc>560</xloc>
+      <yloc>272</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
