@@ -159,6 +159,17 @@ Com a diferença de que a a consulta é realizado no banco de dados **oltp** e c
 de dados auxiliar espelhando o banco de dados **oltp** para que o processo de transformações e carga
 para o data warehouse não afetem as operações da empresa.
 
+### Realizando limpeza e transformações da staging gerando as dimensões e carregando no data warehouse
+- Nesta etapa será adicionado imagens do processo de ETL realizado utilizando a ferramenta Pentaho (data integration)
+
+#### Explicação do processo
+- Inicia com o job Start dw full
+  - Ele chama a primeira **Transform**
+    - A Transform realiza o seu processo
+- O **Job** recebe o resultado da **Transform**
+  - O job chama a proxima **Transform**
+    - E segue este processo até que o Job chame todas as Transforms
+
 
 
 ## Tecnicas utilizadas
