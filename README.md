@@ -179,6 +179,10 @@ para o data warehouse não afetem as operações da empresa.
 
 ![Transform dim_sellers dw full](docs/processoETL/dw/dim_sellers.png)
 
+##### **Transform dim_customers**
+
+![Transform dim_customers dw full](docs/processoETL/dw/dim_customers.png)
+
 ## Tecnicas utilizadas
 - No item 5 Conhecendo os dados da **Etapas do projeto**
   - Foi utilzado a biblioteca **pandas** para fazer as analises dos dados.
