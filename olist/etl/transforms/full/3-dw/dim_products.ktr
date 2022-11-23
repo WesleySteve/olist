@@ -436,6 +436,57 @@
   <notepads>
   </notepads>
   <connection>
+    <name>olist_dw</name>
+    <server>localhost</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>dwolist</database>
+    <port>5632</port>
+    <username>dw</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb79ce74c9c3fd89</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>5632</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
+    </attributes>
+  </connection>
+  <connection>
     <name>olist_staging</name>
     <server>localhost</server>
     <type>POSTGRESQL</type>
@@ -502,6 +553,11 @@
       <to>fr_products_nao_nulos</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>sv_products_final</from>
+      <to>clu_products</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <step>
     <name>fr_products_nao_nulos</name>
@@ -533,8 +589,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>64</xloc>
-      <yloc>240</yloc>
+      <xloc>96</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -589,8 +645,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>64</xloc>
-      <yloc>128</yloc>
+      <xloc>96</xloc>
+      <yloc>144</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -644,8 +700,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>208</xloc>
-      <yloc>240</yloc>
+      <xloc>240</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -897,8 +953,87 @@ FROM "public".products
       </output>
     </remotesteps>
     <GUI>
-      <xloc>64</xloc>
-      <yloc>32</yloc>
+      <xloc>96</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>clu_products</name>
+    <type>CombinationLookup</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <schema>public</schema>
+    <table>dim_products</table>
+    <connection>olist_dw</connection>
+    <commit>100</commit>
+    <cache_size>9999</cache_size>
+    <replace>N</replace>
+    <preloadCache>N</preloadCache>
+    <crc>N</crc>
+    <crcfield>hashcode</crcfield>
+    <fields>
+      <key>
+        <name>nk_product_id</name>
+        <lookup>nk_product_id</lookup>
+      </key>
+      <key>
+        <name>product_category_name</name>
+        <lookup>product_category_name</lookup>
+      </key>
+      <key>
+        <name>product_name_lenght</name>
+        <lookup>product_name_lenght</lookup>
+      </key>
+      <key>
+        <name>product_description_lenght</name>
+        <lookup>product_description_lenght</lookup>
+      </key>
+      <key>
+        <name>product_photos_qty</name>
+        <lookup>product_photos_qty</lookup>
+      </key>
+      <key>
+        <name>product_weight_g</name>
+        <lookup>product_weight_g</lookup>
+      </key>
+      <key>
+        <name>product_length_cm</name>
+        <lookup>product_length_cm</lookup>
+      </key>
+      <key>
+        <name>product_height_cm</name>
+        <lookup>product_height_cm</lookup>
+      </key>
+      <key>
+        <name>product_width_cm</name>
+        <lookup>product_width_cm</lookup>
+      </key>
+      <return>
+        <name>sk_product_id</name>
+        <creation_method>autoinc</creation_method>
+        <use_autoinc>Y</use_autoinc>
+      </return>
+    </fields>
+    <sequence/>
+    <last_update_field>dt_load</last_update_field>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>400</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
