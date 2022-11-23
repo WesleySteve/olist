@@ -152,6 +152,14 @@
 
 ![Transform order_items oltp full](docs/processoETL/oltp/transformOltpOrderItems.png)
 
+### Carga full na staging area
+
+- Este processo tem como base o processo da carga no banco de dados (oltp). 
+Com a diferença de que a a consulta é realizado no banco de dados **oltp** e carregado em um banco
+de dados auxiliar espelhando o banco de dados **oltp** para que o processo de transformações e carga
+para o data warehouse não afetem as operações da empresa.
+
+
 
 ## Tecnicas utilizadas
 - No item 5 Conhecendo os dados da **Etapas do projeto**
