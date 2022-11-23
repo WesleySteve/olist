@@ -198,6 +198,7 @@ para o data warehouse não afetem as operações da empresa.
 
 ![Transform dim_tempo dw full](docs/processoETL/dw/dim_tempo.png)
 
+
 ## Tecnicas utilizadas
 - No item 5 Conhecendo os dados da **Etapas do projeto**
   - Foi utilzado a biblioteca **pandas** para fazer as analises dos dados.
@@ -211,3 +212,5 @@ para o data warehouse não afetem as operações da empresa.
     - Foi utilizado a ferramenta **Pentaho (data integration)** para fazer as manipulações necessarias para gerar o banco de dados transacional.
 - No item 10 Carga full na staging area
     - Foi utilizado a ferramenta **Pentaho (data integration)** para fazer as manipulações necessarias para gerar o banco de dados staging.
+- No item 11 Realizando limpeza e transformações da staging gerando as dimensões e carregando no data warehouse
+    - Foi utilizado a ferramenta **Pentaho (data integration)** para fazer as manipulações necessarias para gerar o banco de dados data warehouse. 
