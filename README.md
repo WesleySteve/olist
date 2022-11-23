@@ -22,8 +22,8 @@
 - 8  [x] Configurando docker-compose
 - 9  [x] Carga full dos arquivos.csv para o banco transacional (oltp)
 - 10 [x] Carga full na staging area
-- 11 [] Realizando limpeza e transformações da staging carregando 
-        no data warehouse as dimensões
+- 11 [x] Realizando limpeza e transformações da staging gerando as dimensões e carregando 
+        no data warehouse
 - 12 [] Carga incremental por perido da tabela fato_orders no data warehouse
 - 13 [] Realizando limpeza e transformações por perido da tabela e carregando no data warehouse
 - 14 [] Apresentando os resultados
