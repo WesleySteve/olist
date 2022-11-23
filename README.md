@@ -193,6 +193,11 @@ para o data warehouse não afetem as operações da empresa.
 
 ![Transform dim_payments dw full](docs/processoETL/dw/dim_payments.png)
 
+
+##### **Transform dim_tempo**
+
+![Transform dim_tempo dw full](docs/processoETL/dw/dim_tempo.png)
+
 ## Tecnicas utilizadas
 - No item 5 Conhecendo os dados da **Etapas do projeto**
   - Foi utilzado a biblioteca **pandas** para fazer as analises dos dados.
