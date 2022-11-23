@@ -171,6 +171,9 @@ para o data warehouse não afetem as operações da empresa.
     - E segue este processo até que o Job chame todas as Transforms
 
 
+##### **Job Start dw full**
+
+![Job Start dw full](docs/processoETL/dw/jobDw.png)
 
 ## Tecnicas utilizadas
 - No item 5 Conhecendo os dados da **Etapas do projeto**
