@@ -436,6 +436,57 @@
   <notepads>
   </notepads>
   <connection>
+    <name>olist_dw</name>
+    <server>localhost</server>
+    <type>POSTGRESQL</type>
+    <access>Native</access>
+    <database>dwolist</database>
+    <port>5632</port>
+    <username>dw</username>
+    <password>Encrypted 2be98afc86aa7f2e4cb79ce74c9c3fd89</password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>PORT_NUMBER</code>
+        <attribute>5632</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
+      </attribute>
+    </attributes>
+  </connection>
+  <connection>
     <name>olist_staging</name>
     <server>localhost</server>
     <type>POSTGRESQL</type>
@@ -493,24 +544,24 @@
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>sv_products</from>
-      <to>If field value is null</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
-      <from>If field value is null</from>
-      <to>fr_products_nao_nulos</to>
-      <enabled>Y</enabled>
-    </hop>
-    <hop>
       <from>fr_products_nao_nulos</from>
       <to>sv_products_final</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>sv_products</from>
+      <to>fr_products_nao_nulos</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>sv_products_final</from>
+      <to>clu_products</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <step>
-    <name>If field value is null</name>
-    <type>IfNull</type>
+    <name>fr_products_nao_nulos</name>
+    <type>FilterRows</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -519,33 +570,16 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <replaceAllByValue/>
-    <replaceAllMask/>
-    <selectFields>N</selectFields>
-    <selectValuesType>Y</selectValuesType>
-    <setEmptyStringAll>N</setEmptyStringAll>
-    <valuetypes>
-      <valuetype>
-        <name>String</name>
-        <value>nao informado</value>
-        <mask/>
-        <set_type_empty_string>N</set_type_empty_string>
-      </valuetype>
-      <valuetype>
-        <name>Number</name>
-        <value>-1</value>
-        <mask/>
-        <set_type_empty_string>N</set_type_empty_string>
-      </valuetype>
-      <valuetype>
-        <name>Integer</name>
-        <value>-1</value>
-        <mask/>
-        <set_type_empty_string>N</set_type_empty_string>
-      </valuetype>
-    </valuetypes>
-    <fields>
-      </fields>
+    <send_true_to/>
+    <send_false_to/>
+    <compare>
+      <condition>
+        <negated>N</negated>
+        <leftvalue>product_category_name</leftvalue>
+        <function>IS NOT NULL</function>
+        <rightvalue/>
+      </condition>
+    </compare>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -555,7 +589,7 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>64</xloc>
+      <xloc>96</xloc>
       <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
@@ -611,8 +645,63 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>64</xloc>
-      <yloc>160</yloc>
+      <xloc>96</xloc>
+      <yloc>144</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>sv_products_final</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>nk_product_id</name>
+      </field>
+      <field>
+        <name>product_category_name</name>
+      </field>
+      <field>
+        <name>product_name_lenght</name>
+      </field>
+      <field>
+        <name>product_description_lenght</name>
+      </field>
+      <field>
+        <name>product_photos_qty</name>
+      </field>
+      <field>
+        <name>product_weight_g</name>
+      </field>
+      <field>
+        <name>product_length_cm</name>
+      </field>
+      <field>
+        <name>product_height_cm</name>
+      </field>
+      <field>
+        <name>product_width_cm</name>
+      </field>
+      <select_unspecified>N</select_unspecified>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>240</xloc>
+      <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -864,14 +953,14 @@ FROM "public".products
       </output>
     </remotesteps>
     <GUI>
-      <xloc>64</xloc>
+      <xloc>96</xloc>
       <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>fr_products_nao_nulos</name>
-    <type>FilterRows</type>
+    <name>clu_products</name>
+    <type>CombinationLookup</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -880,89 +969,60 @@ FROM "public".products
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <send_true_to/>
-    <send_false_to/>
-    <compare>
-      <condition>
-        <negated>N</negated>
-        <leftvalue>product_category_name</leftvalue>
-        <function>&lt;></function>
-        <rightvalue/>
-        <value>
-          <name>constant</name>
-          <type>String</type>
-          <text>nao informado</text>
-          <length>-1</length>
-          <precision>-1</precision>
-          <isnull>N</isnull>
-          <mask/>
-        </value>
-      </condition>
-    </compare>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>208</xloc>
-      <yloc>256</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>sv_products_final</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
+    <schema>public</schema>
+    <table>dim_products</table>
+    <connection>olist_dw</connection>
+    <commit>100</commit>
+    <cache_size>9999</cache_size>
+    <replace>N</replace>
+    <preloadCache>N</preloadCache>
+    <crc>N</crc>
+    <crcfield>hashcode</crcfield>
     <fields>
-      <field>
+      <key>
         <name>nk_product_id</name>
-        <rename/>
-      </field>
-      <field>
+        <lookup>nk_product_id</lookup>
+      </key>
+      <key>
         <name>product_category_name</name>
-        <rename/>
-      </field>
-      <field>
+        <lookup>product_category_name</lookup>
+      </key>
+      <key>
         <name>product_name_lenght</name>
-        <rename/>
-      </field>
-      <field>
+        <lookup>product_name_lenght</lookup>
+      </key>
+      <key>
         <name>product_description_lenght</name>
-        <rename/>
-      </field>
-      <field>
+        <lookup>product_description_lenght</lookup>
+      </key>
+      <key>
         <name>product_photos_qty</name>
-        <rename/>
-      </field>
-      <field>
+        <lookup>product_photos_qty</lookup>
+      </key>
+      <key>
         <name>product_weight_g</name>
-        <rename/>
-      </field>
-      <field>
+        <lookup>product_weight_g</lookup>
+      </key>
+      <key>
         <name>product_length_cm</name>
-        <rename/>
-      </field>
-      <field>
+        <lookup>product_length_cm</lookup>
+      </key>
+      <key>
         <name>product_height_cm</name>
-        <rename/>
-      </field>
-      <field>
+        <lookup>product_height_cm</lookup>
+      </key>
+      <key>
         <name>product_width_cm</name>
-        <rename/>
-      </field>
-      <select_unspecified>N</select_unspecified>
+        <lookup>product_width_cm</lookup>
+      </key>
+      <return>
+        <name>sk_product_id</name>
+        <creation_method>autoinc</creation_method>
+        <use_autoinc>Y</use_autoinc>
+      </return>
     </fields>
+    <sequence/>
+    <last_update_field>dt_load</last_update_field>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -972,12 +1032,24 @@ FROM "public".products
       </output>
     </remotesteps>
     <GUI>
-      <xloc>352</xloc>
+      <xloc>400</xloc>
       <yloc>256</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step_error_handling>
+    <error>
+      <source_step>sv_products</source_step>
+      <target_step>Dummy (do nothing)</target_step>
+      <is_enabled>Y</is_enabled>
+      <nr_valuename/>
+      <descriptions_valuename/>
+      <fields_valuename/>
+      <codes_valuename/>
+      <max_errors/>
+      <max_pct_errors/>
+      <min_pct_rows/>
+    </error>
   </step_error_handling>
   <slave-step-copy-partition-distribution>
   </slave-step-copy-partition-distribution>
